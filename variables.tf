@@ -6,7 +6,7 @@ variable "vpc_name" {
 
 variable "subnet_public_1a" {
   type        = string
-  default     = "iac-public-subnet-1aaaaaaa"
+  default     = "iac-public-subnet-1a"
   description = "Subnet public 1a"
 }
 

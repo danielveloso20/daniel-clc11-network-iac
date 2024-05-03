@@ -17,6 +17,15 @@ resource "aws_subnet" "public_1a" {
 
 }
 
+# Correcao primeira issue
+resource "aws_flow_log" "example" {
+  log_destination      = "arn:aws:s3:::daniel-clc11-tfstate"
+  log_destination_type = "s3"
+  traffic_type         = "ALL"
+  vpc_id               = aws_vpc.minha_vpc.id
+}
+
+
 resource "aws_subnet" "public_1c" {
   vpc_id            = aws_vpc.minha_vpc.id
   cidr_block        = "10.0.20.0/24"

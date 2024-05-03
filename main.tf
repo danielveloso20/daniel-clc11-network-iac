@@ -25,6 +25,16 @@ resource "aws_flow_log" "example" {
   vpc_id               = aws_vpc.minha_vpc.id
 }
 
+# Correcao segunda issue
+resource "aws_default_security_group" "default" {
+  vpc_id = aws_vpc.minha_vpc.id
+  
+  tags = {
+    Name = "my-iac-sg"
+  }
+}
+
+
 
 resource "aws_subnet" "public_1c" {
   vpc_id            = aws_vpc.minha_vpc.id
